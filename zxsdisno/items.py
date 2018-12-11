@@ -14,5 +14,6 @@ class ZxsdisnoItem(scrapy.Item):
     count = scrapy.Field()
     noCount = scrapy.Field()
     title = scrapy.Field()
-    price = scrapy.Field()
+    path = scrapy.Field()
     result = scrapy.Field()
+    body = scrapy.Field()

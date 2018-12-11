@@ -18,18 +18,18 @@ NEWSPIDER_MODULE = 'zxsdisno.spiders'
 # USER_AGENT = 'zxsdisno (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 16
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 3
+# DOWNLOAD_DELAY = 0.25
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 16
-# CONCURRENT_REQUESTS_PER_IP = 16
+# CONCURRENT_REQUESTS_PER_IP = 1
 
 # Disable cookies (enabled by default)
 # COOKIES_ENABLED = False
@@ -44,12 +44,14 @@ COOKIES_ENABLED = True
 #   'Accept-Language': 'en',
 # }
 DEFAULT_REQUEST_HEADERS = {
-    'Accept': '*/*',
+    # 'Accept': '*/*',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0',
+    # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
     'Upgrade-Insecure-Requests': '1',
     # 'Host': 'www.baidu.com',
-    'Connection': 'keep-alive',
+    # 'Connection': 'keep-alive',
     'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2'
 }
 
@@ -97,8 +99,16 @@ ITEM_PIPELINES = {
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-MYSQL_HOST = 'localhost'
+#
+# MYSQL_HOST = 'localhost'
+# MYSQL_DBNAME = 'zxcms'
+# MYSQL_USER = 'root'
+# MYSQL_PASSWD = 'root'
+MYSQL_HOST = '101.36.144.167'
 MYSQL_DBNAME = 'zxcms'
-MYSQL_USER = 'root'
-MYSQL_PASSWD = 'root'
+MYSQL_USER = 'zx114'
+MYSQL_PASSWD = '20161021'
+MY_USER_AGENT = [
+    'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0',
+    'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
+]
