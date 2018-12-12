@@ -17,7 +17,7 @@ class IsnobaiduSpider(Spider):
     #     # "https://search.jd.com/Search?keyword=%E6%89%8B%E6%9C%BA&enc=utf-8"
     # ]
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         self.article = None
         self.word = None
         self.wordAttr = None
