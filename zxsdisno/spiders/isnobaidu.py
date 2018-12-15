@@ -14,7 +14,6 @@ class IsnobaiduSpider(Spider):
     ]
 
     def __init__(self):
-        self.myurls = None
         self.count = 0
 
     # def start_requests(self):
