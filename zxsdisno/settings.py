@@ -44,15 +44,10 @@ TELNETCONSOLE_ENABLED = False
 #   'Accept-Language': 'en',
 # }
 DEFAULT_REQUEST_HEADERS = {
-    # 'Accept': '*/*',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
-    # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
     'Upgrade-Insecure-Requests': '1',
-    # 'Host': 'www.baidu.com',
-    # 'Connection': 'keep-alive',
-    'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2'
 }
 
 # Enable or disable spider middlewares
@@ -112,6 +107,5 @@ MY_USER_AGENT = [
     'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0',
     'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
 ]
-LOG_FILE = "/usr/local/lib/python3.5/site-packages/scrapyd/dbs/logs/zxsdisno/demo/mySpider.log"
-# LOG_FILE = r"C:\Users\13671\Desktop\mySpider.log"
+# LOG_FILE = "/usr/local/lib/python3.5/site-packages/scrapyd/dbs/logs/zxsdisno/demo/mySpider.log"
 LOG_LEVEL = "DEBUG"

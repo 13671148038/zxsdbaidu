@@ -61,7 +61,7 @@ class ZxsdisnoPipeline(object):
         self.articleF = open(r'/usr/local/lib/python3.5/site-packages/scrapyd/dbs/logs/zxsdisno/demo/article.txt', 'w')
 
     def process_item(self, item, spider):
-        if '无内容' in item['body']:
+        if '无内容aaa' in item['body']:
             path = item["path"]
             if 'wdr' in path:
                 self.wordAttrF.write('{0}==={1}'.format(item["body"], item["path"]))

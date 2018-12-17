@@ -10,17 +10,15 @@ from zxsdisno.items import ZxsdisnoItem
 class IsnobaiduSpider(Spider):
     name = 'demo'
 
-    allowed_dimains = ['www.baidu.com']
-
     # start_urls = [
     #     'https://www.baidu.com/s?wd=http%3A%2F%2Fwww.2ge.cn%2Fhome%2Fwdr%2FEF0AAB841ABCD83673FB00E58F6E7BCA26'
     #     # "https://search.jd.com/Search?keyword=%E6%89%8B%E6%9C%BA&enc=utf-8"
     # ]
 
     def __init__(self, *args, **kwargs):
-        self.article = None
-        self.word = None
-        self.wordAttr = None
+        self.article = []
+        self.word = []
+        self.wordAttr = []
         self.articleCount = 0
         self.noArticleCount = 0
         self.wordAttrCount = 0
@@ -73,11 +71,14 @@ class IsnobaiduSpider(Spider):
                           cookies=self.cookies)
 
     def parse(self, response):
-        body = response.xpath('//div[@id="content_left"]/div/h3/a/text()').extract()
+        prefix = 'https://www.baidu.com/s?wd='
+        keyWord = 'www.2ge.cn'
+        body = response.xpath('//div[@class="f13"]/a/b/text()').extract()
         item = ZxsdisnoItem()
-        url = response.url
-        if len(body) > 0 and '二哥' in body[0]:
-            item['body'] = body[0]
+        url = response.url[len(prefix):]
+        if len(body) > 0 and keyWord in body[0]:
+            item['body'] = '有内容'
+            item['path'] = url
             if 'wdr' in url:
                 self.wordAttrCount = self.wordAttrCount + 1
             elif 'ard' in url:
@@ -85,8 +86,8 @@ class IsnobaiduSpider(Spider):
             else:
                 self.wordCount = self.wordCount + 1
         else:
+            item['body'] = '无内容aaa'
             item['path'] = url
-            item['body'] = '无内容'
             if 'wdr' in url:
                 self.noWordAttrCount = self.noWordAttrCount + 1
             elif 'ard' in url:
