@@ -10,11 +10,6 @@ from zxsdisno.items import ZxsdisnoItem
 class IsnobaiduSpider(Spider):
     name = 'demo'
 
-    # start_urls = [
-    #     'https://www.baidu.com/s?wd=http%3A%2F%2Fwww.2ge.cn%2Fhome%2Fwdr%2FEF0AAB841ABCD83673FB00E58F6E7BCA26'
-    #     # "https://search.jd.com/Search?keyword=%E6%89%8B%E6%9C%BA&enc=utf-8"
-    # ]
-
     def __init__(self, *args, **kwargs):
         self.article = []
         self.word = []
